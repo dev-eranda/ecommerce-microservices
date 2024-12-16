@@ -46,8 +46,6 @@ services:
     restart: unless-stopped
     ports:
       - "8081:8081"
-    volumes:
-      - mongo:/data
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: eranda
       ME_CONFIG_MONGODB_ADMINPASSWORD: eranda
