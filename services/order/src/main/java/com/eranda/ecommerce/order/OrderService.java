@@ -6,6 +6,8 @@ import com.eranda.ecommerce.kafka.OrderConfirmation;
 import com.eranda.ecommerce.kafka.OrderProducer;
 import com.eranda.ecommerce.orderline.OrderLineRequest;
 import com.eranda.ecommerce.orderline.OrderLineService;
+import com.eranda.ecommerce.payment.PaymentClient;
+import com.eranda.ecommerce.payment.PaymentRequest;
 import com.eranda.ecommerce.product.ProductClient;
 import com.eranda.ecommerce.product.PurchaseRequest;
 import jakarta.persistence.EntityNotFoundException;
@@ -25,6 +27,7 @@ public class OrderService {
     private final OrderMapper mapper;
     private final OrderLineService orderLineService;
     private final OrderProducer orderProducer;
+    private final PaymentClient paymentClient;
 
 
     public Integer createOrder(OrderRequest request) {
@@ -51,6 +54,14 @@ public class OrderService {
         }
 
         // start payment process
+        var paymentRequest = new PaymentRequest(
+            request.amount(),
+            request.paymentMethod(),
+            order.getId(),
+            order.getReference(),
+            customer
+        );
+        paymentClient.requestOrderPayment(paymentRequest);
 
         // send the order confirmation to notification-ms (Kafka)
         orderProducer.sendOrderConfirmation(

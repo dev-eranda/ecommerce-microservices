@@ -1,4 +1,4 @@
-package com.eranda.ecommerce.order;
+package com.eranda.ecommerce.payment;
 
 public enum PaymentMethod {
     PAYPAL,
