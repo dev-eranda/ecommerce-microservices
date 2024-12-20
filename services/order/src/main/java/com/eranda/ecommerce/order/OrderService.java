@@ -29,7 +29,6 @@ public class OrderService {
     private final OrderProducer orderProducer;
     private final PaymentClient paymentClient;
 
-
     public Integer createOrder(OrderRequest request) {
         // check customer => openFeign
         var customer = this.customerClient.findCustomerById(request.customerId())
