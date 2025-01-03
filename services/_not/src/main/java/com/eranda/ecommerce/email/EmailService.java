@@ -19,7 +19,7 @@ import java.util.Map;
 
 import static com.eranda.ecommerce.email.EmailTemplates.ORDER_CONFIRMATION;
 import static com.eranda.ecommerce.email.EmailTemplates.PAYMENT_CONFIRMATION;
-import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.nio.charset.StandardCharsets.*;
 
 @Service
 @RequiredArgsConstructor

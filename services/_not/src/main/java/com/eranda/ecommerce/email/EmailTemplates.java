@@ -16,4 +16,3 @@ public enum EmailTemplates {
         this.subject = subject;
     }
 }
-

@@ -1,10 +1,8 @@
-package com.eranda.ecommerce.notification;
-
-import com.eranda.ecommerce.payment.PaymentMethod;
+package com.eranda.ecommerce.kafka.payment;
 
 import java.math.BigDecimal;
 
-public record PaymentNotificationRequest(
+public record PaymentConfirmation(
         String orderReference,
         BigDecimal amount,
         PaymentMethod paymentMethod,
