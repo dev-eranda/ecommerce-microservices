@@ -13,7 +13,7 @@ The primary objectives of this application include:
 2. Integrate Apache Kafka to manage real-time, event-driven communication between services.
 3. Implement secure authentication and authorization mechanisms for sensitive user data and transactions.
 4. Ensure high availability and fault tolerance with a distributed service-oriented approach.
-5. Provide efficient and reliable CRUD operations for managing products, users, and orders within the e-commerce platform.
+5. Provide efficient and reliable CRUD operations for managing products, users, and orders within the platform.
 <hr />
 
 ## Technical Details  
