@@ -1,5 +1,5 @@
 # Spring Boot Microservice 
-**Developed By:** Eranda Samarasinghe  
+**Developed by:** Eranda Samarasinghe  
 <hr />
 
 ## Project Background and Overview  
